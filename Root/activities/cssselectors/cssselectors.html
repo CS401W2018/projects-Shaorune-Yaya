@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="csssel.css"
+</head>
+<body>
+    <header>
+        <h1>Web Design</h1>
+    </header>
+    <nav>Link Link Link</nav>
+    <main>
+        <h2>Four ways to select tags</h2>
+        <ol>
+            <li>Tag Name</li>
+            <li>Decendent</li>
+            <li>
+                ID(Only uses once, noun)
+                <br>a tag can only have one ID
+                <br>by assign id to tags after their tag for example &lt;p id = "first" &gt;
+                <br>Only one word is accepted, if multiple, use connection like &UnderBar; or #
+            </li>
+            <li>
+                Class(Re-useable, adjective)
+                <br>a tag can have multiple classes
+                <br>Works exactly like ID but start with a - or &period;
+            </li>
+        </ol>
+        <h2>What is the difference between an ID and a Class?</h2>
+        <p>Class name can be used multiple times, but Id can only be used one time, we should defalutly uses class rather than ID</p>
+        <h2>What is the difference between a SPAN tag and a DIV tag?</h2>
+        <p>
+            SPAN: is a inline element, its use for covering a part of the paragraph so we cna edit CSS without linebreaks
+            <br>DIV: is a block element, its use for covering a larger block or multiple tags, DIV tags causes linebreaks. 
+        </p>
+        <h2>What is the difference between a DIV tag and HEADER, MAIN, FOOTER?</h2>
+        <p>There is not much different between them, except DIV doesn't define the tag characteristic. and tags like HEADER etc can define the usage of the block</p>
+        <h2>What are different ways to select a color?</h2>
+        <p>By applying CSS: color: rgb(R, G, B);</p>
+        <hr>
+        <p id = "first">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class = "bolder">Incidunt, quia. Labore, quos ratione. Explicabo maiores nobis dolorem,</span> earum eum adipisci voluptatem debitis tempora, cumque ducimus et dolores assumenda sed labore?</p>
+        <div class = "dark">
+            <p class = "green bigger">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At earum fuga reprehenderit, beatae voluptates doloribus vitae exercitationem sed optio incidunt nobis officia cupiditate facere quia, veritatis accusantium modi inventore in.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hantian</p>
+    </footer>
+    
+</body>
+</html>

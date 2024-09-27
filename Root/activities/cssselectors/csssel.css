@@ -1,0 +1,27 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bolder{
+    font: weight 800px;
+}
+.dark{
+    background-color: gray;
+}
+main .green{
+    font-family: Jokerman;
+}
+#first{
+    color:blue;
+}
+.green{
+    color: green;
+}
+.bigger{
+    font-size: 24pt;
+}
+.color{
+    color: rgb(146, 204, 60);
+}
+hr{
+    font: weight 800px;
+}
