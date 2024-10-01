@@ -2,7 +2,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 .bolder{
-    font: weight 800px;
+     font-weight: bold;
 }
 .dark{
     background-color: gray;
