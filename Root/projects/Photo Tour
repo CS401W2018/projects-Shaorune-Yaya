@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Photo Tour about a Place</h1>
+    </header>
+    <nav>
+        <a href="index.html" class="current">Home</a>
+        <a href="place1.html">Place1</a>
+        <a href="place2.html">Place2</a>
+    </nav>
+    <main>
+        <h2>Welcome To My Photo Tour</h2>
+        <h2>Place on my tour</h2>
+        <ul>
+            <li>Place1</li>
+            <li>Place2</li>
+            <li>Place3</li>
+        </ul>
+        <h2>When should you use a background image, and when should you use the IMG tag?</h2>
+        <p>The background image is used for decoration and effect &lt;Img&gt; tags are used for content and accessibility. </p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hantian</p>
+    </footer>
+</body>
+</html>
