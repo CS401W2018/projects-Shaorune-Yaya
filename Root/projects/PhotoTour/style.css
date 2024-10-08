@@ -1,52 +1,222 @@
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    color: white;
+/* 保持字体、颜色和背景 */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(34, 34, 34, 0.788);
     background-color: #2222DD;
-    background-image: url(Blue_Background.jpg)
+    background-image: url(Blue_Background.webp);
+    background-size: cover;
+    filter: blur(0px);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-header{
-    background-position: right;
-    background-repeat: no-repeat;
-    background-image:none
-}
-nav{
-    display: flex;
-    justify-content: flex-end;
+
+/* 背景虚化 */
+.background-blur {
     width: 100%;
-    gap: 10px;
+    height: 100vh;
+    background-image: url(Blue_Background.webp);
+    background-size: cover;
+    filter: blur(20px);
+    position: relative;
 }
-nav a{
-    color:rgb(89, 211, 248)
+.blur {
+    filter: blur(5px);
 }
-.current{
-    color:rgb(165, 164, 164)
-}
-.list{
-    list-style-image: url(unpressed_button.png);
-}
+
+/* h1 标题 */
 h1 {
-    position: absolute;
-    top: 100px;
-    left: 50px;
-    font-size: 50px;
-  }
-.wel{
-    margin-top: 120px;
-    margin-left: 45px;
-    color:rgb(189, 186, 186);
-    font-size: 25px;   
+    color: white;
+    margin-left: 2%; /* 改为相对单位 */
+    margin-top:-2.3vw;
+    margin-left: 3vw;
+    font-size: 1.5vw; /* 相对于视口宽度 */
 }
-.description{
-    margin-top: 30px;
-    margin-left: 45px;
+h2{
+    font-size: 2vw;
+}
+
+/* logo 样式 */
+.logo {
+    width: 3vw; /* 使用相对宽度单位 */
+    height: auto; /* 保持宽高比例 */
+    margin-right: 20px; /* 与标题之间的间距 */
+    display: block;
+}
+
+/* 导航栏样式 */
+nav {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: space-between; /* 导航栏靠右 */
+    padding: 1% 2%; /* 使用百分比单位控制内边距 */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 2vw; /* 相对视口宽度的间距 */
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 0.5vw 1vw; /* 使用相对单位 */
+    color: rgb(89, 211, 248);
+    background-color: transparent;
+    border-radius: 1vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 2.2vh
+}
+
+/* 鼠标悬停时的按钮效果 */
+nav ul li a:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* 当前页面的导航项始终显示按钮效果 */
+nav ul li a.current {
+    background-color: #3498db;
+    color: white;
+}
+
+/* 圆角矩形样式 */
+.rounded-rectangle {
+    width: 75%; /* 使用相对宽度 */
+    height: 30vw; /* 高度根据内容自动调整 */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0 3vw 3vw 0; /* 使用相对单位 */
+    box-shadow: vw 4vw 6vw rgba(0, 0, 0, 1);
+    margin-right: 5%; /* 使用相对单位让元素居中 */
+    transition: transform 0.3s ease;
+    padding: 3vw;
+    position: relative; /* 相对定位 */
+}
+.image_rectangle_Landscape{
+    width: 55%; 
+    height: 18vw; 
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 1vw; 
+    position: absolute; /* 绝对定位，重叠在大圆角矩形上 */
+    top: 7%; /* 调整相对父容器的位置 */
+    left: 45%; /* 调整相对父容器的位置 */
+    transition: transform 0.3s ease;
+    padding: 3vw;
+    background-image: url("image.webp");
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+    0 6px 6px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+}
+.image_rectangle_portrait {
+    width: 40%; 
+    height: 40vw; 
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+    border-radius: 1vw; 
+    position: absolute; /* 绝对定位 */
+    top: -6%; 
+    left: 45%; 
+    transition: transform 0.3s ease;
+    padding: 3vw;
+    background-image: url("image.webp");
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+    0 6px 6px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+    overflow: hidden; /* 确保内容超出部分被裁剪 */
+}
+.image {
+    width: 100%;
+    height: 100%;
+    object-position: center; /* 图片居中显示 */
+    border-radius: 1vw; /* 与容器的圆角保持一致 */
+    object-fit: fill
+}
+.slider {
+    display: flex;
+    width: 100%; /* 2张图片总宽度为100% * 2 */
+    height: 100%;
+    animation: slide 5s ease-in-out infinite; /* 9秒滚动一次，无限循环 */
+}
+.slider img {
+    width: 100%; /* 每张图片独占整个容器 */
+    height: 100%;
+    object-fit: fill; /* 保持比例填充容器 */
+    margin-right: 8vw;
+    object-position: center;
+}
+@keyframes slide {
+    0% {
+        transform: translateX(5%); /* 第一张图片 */
+    }
+    5% {
+        transform: translateX(-100%); /* 停留在第一张 */
+    }
+    45% {
+        transform: translateX(-100%); /* 切换到第二张图片 */
+    }
+    50% {
+        transform: translateX(5%); /* 切换到第二张图片 */
+    }
+    100% {
+        transform: translateX(5%); /* 停留在第二张 回到第一张 */
+    }
+}
+.slider2 {
+    display: flex;
+    width: 100%; /* 2张图片总宽度为100% * 2 */
+    height: 100%;
+    animation: slide2 5s ease-in-out infinite; /* 9秒滚动一次，无限循环 */
+}
+.slider2 img {
+    width: 100%; /* 每张图片独占整个容器 */
+    height: 100%;
+    object-fit: fill; /* 保持比例填充容器 */
+    margin-right: 17vw;
+    object-position: center;
+}
+@keyframes slide2 {
+    0% {
+        transform: translateX(0%); /* 第一张图片 */
+    }
+    5% {
+        transform: translateX(-120%); /* 停留在第一张 */
+    }
+    45% {
+        transform: translateX(-120%); /* 切换到第二张图片 */
+    }
+    50% {
+        transform: translateX(0%); /* 切换到第二张图片 */
+    }
+    100% {
+        transform: translateX(0%); /* 停留在第二张 回到第一张 */
+    }
+}
+/* 主体内容样式 */
+
+
+ul.shift {
+    margin-left: 5%;
+    margin-top: -3vh;
+}
+
+p {
+    max-width: 35%;
+    margin-right:5%; /* 垂直居中并使用视口高度控制外边距 */
+    font-size: 1.2vw;
 }
 ul{
-    margin-top: 30px;
-    margin-left: 25px;
-    font-size:18px;
+    font-size: 1.2vw;
+    list-style: none;
 }
-p{
-    max-width: 600px;
-    margin-left: 50px;
-    font-size:18px;
+.ul{
+    background-image: url('bullet_point.webp'); /* 使用图片作为项目符号 */
+    background-size: 20px 20px; /* 设置图片大小 */
+    background-repeat: no-repeat;
+    background-position: 0 2px; /* 调整图片位置 */
+    padding-left: 30px; /* 为项目符号预留空间 */
+}
+footer{
+    color: white;
+}
+.bolder{
+    font-weight: bold;
 }
