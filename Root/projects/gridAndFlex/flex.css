@@ -1,0 +1,16 @@
+header{
+    background-color: black;
+    color: white;
+    margin-bottom: 0%;
+}
+nav {
+    margin-top: 0%;
+    display: flex;
+    justify-content:space-evenly;
+    background-color: rgb(207, 207, 207);
+}
+
+nav a{
+    display: block;
+    color:black
+}
