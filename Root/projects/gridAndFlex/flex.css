@@ -1,7 +1,11 @@
 header{
     background-color: black;
     color: white;
-    margin-bottom: 0%;
+    padding: 0;
+}
+h1{
+    margin: 0;
+    padding: 10px;
 }
 nav {
     margin-top: 0%;
@@ -13,4 +17,65 @@ nav {
 nav a{
     display: block;
     color:black
+}
+.main {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+aside {
+    width: 30%;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+aside p{
+    margin: 0;
+
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:5px
+}
+
+.Pictures{
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    padding: 0px;
+    margin: 1%;
+}
+.Pictures img{
+    width:100%;
+    height: auto;
+    display:block;
+    border-radius: 0;
+    border: none;
+    padding: 0px;
+}
+.Picture p{
+    padding: 10px;
+}
+
+figcaption {
+    display: none;
+}
+
+.clear{
+    clear:both;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:20%;
+    background-color: gray;
+}
+.links a{
+    color:rgb(247, 247, 247);
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    padding: 0.2%;
 }
