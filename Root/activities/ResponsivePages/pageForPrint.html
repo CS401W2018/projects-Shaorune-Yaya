@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page for Print</title>
+    <link rel="stylesheet" href="pageForPrint.css" media="screen">
+    <link rel="stylesheet" href="Print.css" media="print">
+</head>
+<body>
+    <header>
+        <h1>
+            Web Development
+        </h1>
+    </header>
+
+    <nav>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </nav>
+
+    <main>
+        <h1>Cards</h1>
+        <div class="Picture">
+            <figure class="Nature">
+                <img src="Nature.jpg" alt="Nature">
+                <div class="text">
+                    <h2>Picture of Nature</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+            </figure>
+            <figure class="Nature middle">
+                <img src="Nature.jpg" alt="Nature">
+                <div class="text">
+                    <h2>Picture of Nature</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+            </figure>
+            <figure class="Nature">
+                <img src="Nature.jpg" alt="Nature">
+                <div class="text">
+                    <h2>Picture of Nature</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+            </figure>
+        </div>
+        <ol>
+            <li><h2>Why do we need a viewport meta tag?</h2></li>
+            <p>Meta tags are used to control the layout and scaling behavior of web pages on mobile devices. It ensures that the page displays as expected on screens of different sizes, especially on mobile devices.</p>
+            <li><h2>When you select the same tag twice, and in one of them you say "flex-direction: column;" and the other says "flex-direction: row;", which one takes priority?</h2></li>
+            <p>The priority depends on the order of CSS rules, and rules defined later will override those defined earlier.</p>
+            <li><h2>How do you change the CSS for a web page displayed on a phone?</h2></li>
+            <p>use @ media (max width: 600px) {...} to apply CSS that only takes effect when the screen width is less than 600px, thereby adjusting the display effect of the page on the phone.</p>
+        </ol>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hantian</p>
+    </footer>
+</body>
+</html>
