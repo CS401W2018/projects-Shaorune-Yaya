@@ -60,13 +60,9 @@ aside img{
     width: 100%;
     border-radius: 1vw 1vw 0vw 0vw;
 }
+
 nav {
-    display: flex;
-    align-items: center;
-    justify-content:space-evenly;
-    padding: 0 0;
-    margin: 0px auto;
-    
+    display:none;
 }
 
 nav ul {
@@ -115,95 +111,4 @@ h1{
 
 .clear{
     clear:both;
-}
-
-@media only screen and (max-width:600px){
-    nav{
-        background-color:rgb(0, 0, 0,0.2);
-    }
-    nav ul{
-        flex-direction: column;
-        display: flex;
-        gap: 2vw;
-    }
-
-    nav ul li a{
-        border-bottom: thin solid #000000;
-
-    }
-    nav ul li a.current {
-        background-color: #ffffff;
-        color: #82c3c5;
-        border: 0.2vw solid #82c3c5;
-        text-shadow: 0px 0px;
-    }
-
-    .Picture {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .Pic {
-        width: 80%;
-        margin: 10px 0;
-    }
-    .Pic h2{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 6vw;
-        font-weight: bold;
-        text-align: center;
-        margin: 0px;
-        max-width: 100%;
-    }
-    
-    .Pic p{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 4vw;
-        text-align: center;
-        max-width: 100%;
-        
-    }
-
-    aside {
-        width: 78%;
-        padding: 1%;
-        margin-left: 1%;
-        background-color: rgb(255, 255, 255,0.5);
-        border-radius: 1vw;
-    }
-    aside img{
-        width: 100%;
-
-    }
-    aside h2{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 6vw;
-    }
-
-    aside ul{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 4vw;
-    }
-    .top{
-        order: 0;
-    }
-
-    .middle {
-        order: 1;
-    }
-
-    .bottom {
-        order: 2;
-    }
-    .last{
-        order: 3;
-    }
-
-    h1{
-        color: #a13c28;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 8vw;
-        font-weight: 1000;
-    
-    }
 }
