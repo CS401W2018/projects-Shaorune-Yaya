@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tables</title>
-    <link rel="stylesheet" href="tables.css">
+    <link rel="stylesheet" href="table.css">
 </head>
 <body>
     <header><h1>My Class Schedule</h1></header>
     <main>
-        <table border="2">
+        <table class="schedule">
             <thead>
                 <tr>
                     <th>Debt.</th><th>Number</th><th>time</th><th>Location</th><th>Credits</th>
@@ -42,6 +42,14 @@
                 </tr>
             </tfoot>
         </table>
+        <ul>
+            <li><h3>Why don't we use the border property?</h3></li>
+            <p>The border attribute affects layout and the usage of CSS, we use css to costomize our Table</p>
+            <li><h3>What is the easiest way to color every other row a different color?</h3></li>
+            <p>Using the nth child selector, such as <code>tr:nth-child(odd){ background-color: rgb(208, 229, 253);}</code> can achieve an interlaced color change effect.</p>
+            <li><h3>When should we use a table?</h3></li>
+            <p>When displaying structured and relational data, such as financial statements, schedules, or data statistics</p>
+        </ul>
     </main>
 </body>
 </html>
