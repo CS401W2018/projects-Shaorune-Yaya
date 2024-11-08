@@ -4,56 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
     <header><h1>Forms</h1></header>
     <main>
         <form action="processing.thml" method="post">
-            <div>
-                <label for="firstNameInput">First Name</label><input type="text" name="firstName" id="firstNameInput" placeholder="First Name">
+            <fieldset>
+                <legend>Sign Up</legend>
+            <div class="form-row">
+                <label for="firstNameInput">First Name:</label>
+                <input type="text" name="firstName" id="firstNameInput" placeholder="First Name" requi>
             </div>
-            <div>
-                <label for="emailInput">Email<input type="email" name="email" id="emailInput" placeholder="example@.com">
+            <div class="form-row">
+                <label for="emailInput">Last Name:</label>
+                <input type="text" name="lastName" id="lastNameInput" placeholder="Last Name">
             </div>
-            <div>
-                <label for="DoBInput">Birth Date<input type="date" name="birthDate" id="DoBInput">
+            <div class="form-row">
+                <label for="DoBInput">Birth Date:</label>
+                <input type="date" name="birthDate" id="DoBInput">
             </div>
-            <div>
-                <label for="passwordInput">Password<input type="password" name="email" id="passwordInput" placeholder="password">
+            <div class="form-row">
+                <label for="passwordInput">Password:</label>
+                <input type="password" name="email" id="passwordInput" placeholder="password">
             </div>
-            <div>
+            <div class="check-row">
+                <div class="spacer"></div>
+                <label>
+                    <input type="checkbox" name="remember" value="remember" checked>Remember Me
+                </label>
+            </div>
+            <div class="check-row ">
+                <div class="spacer"></div>
                 Gender:
                 <label><input type="radio" name="gender" value="male">Male</label>
                 <label><input type="radio" name="gender" value="female">Female</label>
             </div>
-            <div>
-                <label><input type="checkbox" name="agree" value="agree">I agree to the terms.</label>
-            </div>
-            <div>
+            <div class="form-row">
                 <label for="state">State:</label>
                 <select name="state" id="stateInput">
-                    <option value="ca">California</option>
-                    <option value="hi">Hawaii</option>
-                    <option value="ut">Utah</option>
+                    <option value="Blank">-Choose your State-</option>
+                    <option value="CA">California</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="UT">Utah</option>
                 </select>
             </div>
-            <div>
+            <div class="form-row">
                 <label for="comment">Comment: </label>
                 <textarea name="comment" id="commentInput"></textarea>
             </div>
-            <div>
-            <input type="submit">
+            <div class="form-row">
+                <div class="spacer"></div>
+                <input type="submit">
             </div>
+        </fieldset>
         </form>
         <ol>
-            <li><h3>The form tag has an "action" attribute. What does it do?</h3></li>
-            <p>Specify the destination URL for sending data after submitting the form, which is the address where the server receives the data.</p>
-            <li><h3>The form tag has a "method" attribute. What does it do?</h3></li>
-            <p>Define the submission method for form data, usually "GET" or "POST".</p>
-            <li><h3>What is the difference between a "POST" and a "GET"?</h3></li>
-            <p>GET: The data is attached to the URL, which is suitable for obtaining data. The amount of data is limited and not secure.
-            <br>POST: Data is sent within the request body, making it suitable for submitting sensitive or large amounts of data and more secure.</p>
+            <li><h3>What are different ways to style your form?</h3></li>
+            <p></p>
+            <li><h3>Why does the professor like to use flex?</h3></li>
+            <p></p>
         </ol>
     </main>
+    <footer>
+        <p>&copy; 2024 Hantian</p>
+    </footer>
 </body>
 </html>
