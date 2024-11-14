@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <header>
+        <h1>Web Design</h1>
+    </header>
+    <main>
+        <form action="processing.html" method="post" id="myForm">
+            First Name: <input type="text" id="firstName" name="first" placeholder="First Name"><br>
+            Last Name: <input type="text" id="lastName" name="last" placeholder="Last Name"><br>
+            Password: <input type="password" id="password" name="pass" placeholder="Password"><br>
+            <input type="checkbox" checked id="remember" name="remember">Remember Me<br>
+            Age: <input type="number" id="age" name="age"><br>
+            Class:
+            <input type="radio" value="Freshman">Freshman<br>
+            <input type="radio" value="Sophomore">Sophomore<br>
+            <input type="radio" value="Junior">Junior<br>
+            <input type="radio" value="Senior">Senior<br>
+            State: <select name="state" id="state">
+                <option value="blank" disabled selected> Make Selection</option>
+                <option value="HI">Hawaii</option>
+                <option value="CA">California</option>
+                <option value="UT">Utah</option>
+            </select><br>
+            <input type="submit">
+        </form>
+        <ol>
+            <li><h3>What is JavaScript? How did it get its name?</h3></li>
+            <p>JavaScript is a scripting language used for web development, originally borrowed the name Java to attract developers.</p>
+            <li><h3>What are the two ways you can run JavaScript?</h3></li>
+            <p>It can be run directly in the browser or on the server-side through Node.js.</p>
+            <li><h3>What was the most popular front-end js library?</h3></li>
+            <p>jQuery</p>
+            <li><h3>What is the most popular front-end js library today?</h3></li>
+            <p>React</p>
+        </ol>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hantian</p>
+    </footer>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event){
+            event.preventDefault( );
+            const first = document.getElementById("firstName").value;
+            const last = document.getElementById("lastName").value;
+            const age = document.getElementById("age").value;
+            
+            if(!first || !last) {
+                alert("Please provide your full name.");
+                return;
+            }
+
+            if (!age || age < 18) {
+                alert("You must be 18 years or older to submit this form.");
+                return;
+            }
+
+            const data = {
+                firstName: first,
+                lastName: last,
+                age: age
+            }
+            
+            console.log(data);
+        });
+    </script>
+</body>
+</html>
