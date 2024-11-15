@@ -10,6 +10,7 @@
         <h1>Web Design</h1>
     </header>
     <main>
+        <div id="message"></div>
         <form action="processing.html" method="post" id="myForm">
             First Name: <input type="text" id="firstName" name="first" placeholder="First Name"><br>
             Last Name: <input type="text" id="lastName" name="last" placeholder="Last Name"><br>
@@ -45,7 +46,7 @@
     </footer>
     <script>
         document.getElementById("myForm").addEventListener("submit", function(event){
-            //event.preventDefault( );
+            event.preventDefault( );
             const first = document.getElementById("firstName").value;
             const last = document.getElementById("lastName").value;
             const age = document.getElementById("age").value;
@@ -60,14 +61,25 @@
                 return;
             }
 
-            const data = {
+            const formData = {
                 firstName: first,
                 lastName: last,
                 password: document.getElementById('password').value,
                 state: document.getElementById('state').value
             };
-            alert("Success!")
-            console.log(data);
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "submit.json", true);
+            xhr.setRequestHeader("Content-Type", "application/jsonl;charset=UTF-8");
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const response = JSON.parse(xhr.response);
+                    document.getElementById('message').innerHTML = response.message;
+                } else if (xhr.readyState === 4) {
+                    alert('Error submitting form.');
+                }
+            };
+            xhr.send(JSON.stringify(formData));
+            console.log(formData);
         });
     </script>
 </body>
