@@ -45,7 +45,7 @@
     </footer>
     <script>
         document.getElementById("myForm").addEventListener("submit", function(event){
-            event.preventDefault( );
+            //event.preventDefault( );
             const first = document.getElementById("firstName").value;
             const last = document.getElementById("lastName").value;
             const age = document.getElementById("age").value;
@@ -63,9 +63,10 @@
             const data = {
                 firstName: first,
                 lastName: last,
-                age: age
-            }
-            
+                password: document.getElementById('password').value,
+                state: document.getElementById('state').value
+            };
+            alert("Success!")
             console.log(data);
         });
     </script>
