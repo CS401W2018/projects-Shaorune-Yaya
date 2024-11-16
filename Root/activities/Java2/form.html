@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <header>
+        <h1>Web Design</h1>
+    </header>
+    <main>
+        <div id="message"></div>
+        <form action="processing.html" method="post" id="myForm">
+            First Name: <input type="text" id="firstName" name="first" placeholder="First Name"><br>
+            Last Name: <input type="text" id="lastName" name="last" placeholder="Last Name"><br>
+            Password: <input type="password" id="password" name="pass" placeholder="Password"><br>
+            <input type="checkbox" checked id="remember" name="remember">Remember Me<br>
+            Age: <input type="number" id="age" name="age"><br>
+            Class:
+            <input type="radio" value="Freshman">Freshman<br>
+            <input type="radio" value="Sophomore">Sophomore<br>
+            <input type="radio" value="Junior">Junior<br>
+            <input type="radio" value="Senior">Senior<br>
+            State: <select name="state" id="state">
+                <option value="blank" disabled selected> Make Selection</option>
+                <option value="HI">Hawaii</option>
+                <option value="CA">California</option>
+                <option value="UT">Utah</option>
+            </select><br>
+            <input type="submit">
+        </form>
+        <ol>
+            <li><h3>What is AJAX?</h3></li>
+            <p>AJAX is a technology that exchanges data with a server asynchronously without reloading the entire webpage. Its full name is Asynchronous JavaScript and XML.</p>
+            <li><h3>Why do you put your JS Code in a separate file?</h3></li>
+            <p>Putting JavaScript code in a separate file can improve code maintainability, reusability, and help pages load quickly.</p>
+        </ol>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hantian</p>
+    </footer>
+    <script src="form.js"></script>
+</body>
+</html>
