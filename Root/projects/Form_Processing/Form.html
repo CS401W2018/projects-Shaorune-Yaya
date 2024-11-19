@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Form.css">
+</head>
+<body>
+    <header><h1>Forms</h1></header>
+    <main>
+        <form action="processing.thml" method="post">
+            <fieldset>
+                <legend>Sign Up</legend>
+            <div class="form-row">
+                <label for="firstNameInput">First Name:</label>
+                <input type="text" name="firstName" id="firstNameInput" placeholder="First Name" requi>
+            </div>
+            <div class="form-row">
+                <label for="lastNameInput">Last Name:</label>
+                <input type="text" name="lastName" id="lastNameInput" placeholder="Last Name">
+            </div>
+            <div class="form-row">
+                <label for="emailInput">Email:</label>
+                <input type="email" name="lastName" id="lastNameInput" placeholder="example@email.com">
+            </div>
+            <div class="form-row">
+                <label for="DoBInput">Birth Date:</label>
+                <input type="date" name="birthDate" id="DoBInput">
+            </div>
+            <div class="form-row">
+                <label for="passwordInput">Password:</label>
+                <input type="password" name="password" id="passwordInput" placeholder="password">
+            </div>
+            <div class="check-row">
+                <div class="spacer"></div>
+                <label>
+                    <input type="checkbox" name="remember" value="remember" checked>Remember Me
+                </label>
+            </div>
+            <div class="check-row ">
+                <div class="spacer"></div>
+                Gender:
+                <label><input type="radio" name="gender" value="male">Male</label>
+                <label><input type="radio" name="gender" value="female">Female</label>
+            </div>
+            <div class="form-row">
+                <label for="state">State:</label>
+                <select name="state" id="stateInput">
+                    <option value="Blank">-Choose your State-</option>
+                    <option value="CA">California</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="UT">Utah</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="comment">Comment: </label>
+                <textarea name="comment" id="commentInput"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="spacer"></div>
+                <input type="submit">
+            </div>
+        </fieldset>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hantian</p>
+    </footer>
+</body>
+</html>
