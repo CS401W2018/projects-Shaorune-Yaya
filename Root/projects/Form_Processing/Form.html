@@ -9,63 +9,68 @@
 <body>
     <header><h1>Forms</h1></header>
     <main>
-        <form action="processing.thml" method="post">
+        <form action="processing.html" method="post" id="myForm">
             <fieldset>
                 <legend>Sign Up</legend>
-            <div class="form-row">
-                <label for="firstNameInput">First Name:</label>
-                <input type="text" name="firstName" id="firstNameInput" placeholder="First Name" requi>
-            </div>
-            <div class="form-row">
-                <label for="lastNameInput">Last Name:</label>
-                <input type="text" name="lastName" id="lastNameInput" placeholder="Last Name">
-            </div>
-            <div class="form-row">
-                <label for="emailInput">Email:</label>
-                <input type="email" name="lastName" id="lastNameInput" placeholder="example@email.com">
-            </div>
-            <div class="form-row">
-                <label for="DoBInput">Birth Date:</label>
-                <input type="date" name="birthDate" id="DoBInput">
-            </div>
-            <div class="form-row">
-                <label for="passwordInput">Password:</label>
-                <input type="password" name="password" id="passwordInput" placeholder="password">
-            </div>
-            <div class="check-row">
-                <div class="spacer"></div>
-                <label>
-                    <input type="checkbox" name="remember" value="remember" checked>Remember Me
-                </label>
-            </div>
-            <div class="check-row ">
-                <div class="spacer"></div>
-                Gender:
-                <label><input type="radio" name="gender" value="male">Male</label>
-                <label><input type="radio" name="gender" value="female">Female</label>
-            </div>
-            <div class="form-row">
-                <label for="state">State:</label>
-                <select name="state" id="stateInput">
-                    <option value="Blank">-Choose your State-</option>
-                    <option value="CA">California</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="UT">Utah</option>
-                </select>
-            </div>
-            <div class="form-row">
-                <label for="comment">Comment: </label>
-                <textarea name="comment" id="commentInput"></textarea>
-            </div>
-            <div class="form-row">
-                <div class="spacer"></div>
-                <input type="submit">
-            </div>
-        </fieldset>
+                <div class="form-row">
+                    <label for="firstNameInput">First Name:</label>
+                    <input type="text" name="firstName" id="firstNameInput" placeholder="First Name" required>
+                </div>
+                <div class="form-row">
+                    <label for="lastNameInput">Last Name:</label>
+                    <input type="text" name="lastName" id="lastNameInput" placeholder="Last Name" required>
+                </div>
+                <div class="form-row">
+                <label for="ageInput">Age:</label>
+                <input type="number" name="age" id="ageInput">
+                </div>
+                <div class="form-row">
+                    <label for="emailInput">Email:</label>
+                    <input type="email" name="email" id="emailInput" placeholder="example@email.com" required>
+                </div>
+                <div class="form-row">
+                    <label for="DoBInput">Birth Date:</label>
+                    <input type="date" name="birthDate" id="DoBInput" required>
+                </div>
+                <div class="form-row">
+                    <label for="passwordInput">Password:</label>
+                    <input type="password" name="password" id="passwordInput" placeholder="password" required>
+                </div>
+                <div class="check-row">
+                    <div class="spacer"></div>
+                    <label>
+                        <input type="checkbox" name="remember" value="remember" id="rememberMe" checked>Remember Me
+                    </label>
+                </div>
+                <div class="check-row">
+                    <div class="spacer"></div>
+                    Gender:
+                    <label><input type="radio" name="gender" value="male" required>Male</label>
+                    <label><input type="radio" name="gender" value="female" required>Female</label>
+                </div>
+                <div class="form-row">
+                    <label for="state">State:</label>
+                    <select name="state" id="stateInput" required>
+                        <option value="">-Choose your State-</option>
+                        <option value="CA">California</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="UT">Utah</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="comment">Comment:</label>
+                    <textarea name="comment" id="commentInput"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="spacer"></div>
+                    <input type="submit" value="Submit">
+                </div>
+            </fieldset>
         </form>
     </main>
     <footer>
         <p>&copy; 2024 Hantian</p>
     </footer>
+    <script src="form.js"></script>
 </body>
 </html>
