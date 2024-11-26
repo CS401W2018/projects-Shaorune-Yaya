@@ -2,7 +2,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: rgba(34, 34, 34, 0.788);
-    background-color: #2222DD;
+    background-color: #f2eadf;
     background-image: url(Blue_Background.webp);
     background-size: cover;
     filter: blur(0px);
@@ -25,20 +25,27 @@ body {
 
 
 h1 {
-    color: white;
-    margin-left: 2%;
-    margin-top: -2.3vw;
-    margin-left: 3vw;
-    font-size: 1.5vw;
-}
-h2{
-    font-size: 2vw;
+    color: #6b4600;
+    margin-left: -15%;
+    font-size: 3vw;
 }
 
+h2{
+    color: #6b4600;
+    font-size: 2.3vw;
+    margin-top: 0px;
+    
+}
+h3{
+    color: #6b460077;
+    font-size: 1.5vw;
+    margin-top: 0px;
+    
+}
 .logo {
     width: 3vw;
     height: auto;
-    margin-right: 20px;
+    margin-left: -30%;
     display: block;
 }
 
@@ -56,54 +63,145 @@ nav ul {
     gap: 3%; 
 }
 
+.space{
+    margin: 5%;
+}
 
 nav ul li a {
     text-decoration: none;
     border: 0.2vw solid rgb(255, 255, 255, 0);
     padding: 5px 10px;
     color: rgb(248, 246, 238);
-    text-shadow: -1px -1px 0 #82c3c5, 1px -1px 0 #82c3c5, -1px 1px 0 #82c3c5, 1px 1px 0 #82c3c5;
+    text-shadow: -1px -1px 0 #a59178, 1px -1px 0 #a59178, -1px 1px 0 #a59178, 1px 1px 0 #a59178;
     background-color: transparent;
     border-radius: 1vw;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-size: 120%
-    
-    
 }
 
 
 nav ul li a:hover {
-    background-color: #3498db;
+    background-color: #a59178;
     color: white;
 }
 
 
 nav ul li a.current {
-    background-color: #3498db;
+    background-color: #6b4600;
     color: white;
 }
-
-
-.rounded-rectangle {
-    width: 75%;
-    height: 30vw;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 0 3vw 3vw 0; /* Use relative units */
-    box-shadow: vw 4vw 6vw rgba(0, 0, 0, 1);
-    margin-right: 5%; /* Center the element using relative units */
-    transition: transform 0.3s ease;
-    padding: 3vw;
-    position: relative; /* Relative positioning */
+#HomeVideo{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 50vw; 
+    height: 25vw; 
+    border-radius: 2vw; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+    0 6px 6px rgba(0, 0, 0, 0.2); 
 }
 
+.rounded-rectangle {
+    width: 78%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0 3vw 3vw 0; 
+    box-shadow: 0vw 0.4vw 0.6vw rgba(0, 0, 0, 0.5);
+    margin-right: 5%; 
+    padding: 3vw;
+    position: relative; 
+}
+.rounded-rectangle p{
+    max-width: 90%;
+    margin-right: 5%;
+    font-size: 1.3vw;
+    line-height: 200%;
+    margin-left: 3%;
+}
+.rounded-rectangle ul li{
+    font-size: 1.3vw;
+    line-height: 200%;
+}
+.rounded-rectangle p::first-letter {
+    font-size: 3vw; 
+    font-weight: bold;
+    color: #6b4600; 
+    float: left; 
+    line-height: 50%;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap:1vw;
+    padding: 20px;
+}
+.container2{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:5px
+}
+.Pictures{
+    flex: 0 0 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    overflow: hidden;
+    padding: 0px;
+    margin: 1%;
+}
+.Pictures img{
+    width: 80%;
+    height: auto;
+    display:block;
+    border-radius: 1vw;
+    border: none;
+    padding: 0px;
+}
+.Pictures h2{
+    font-size: 1.5vw;
+    text-align: center;
+}
+.Pictures2{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    padding: 0px;
+    margin: 1%;
+}
+.Pictures2 img{
+    width:30%;
+    height:auto;
+    height: auto;
+    display: flex;
+    border-radius: 0;
+    border: none;
+    padding: 0px;
+}
+.Pictures2 h2{
+    margin: 0px;
+    max-width: 80%;
+    font-size: 2vw;
+    text-align: center;
+}
+
+figcaption {
+    display: none;
+}
 .image_rectangle_Landscape {
     width: 55%; 
     height: 18vw; 
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 1vw; 
-    position: absolute; /* Absolute positioning, overlapping the rounded rectangle */
-    top: 7%; /* Adjust relative to the parent container */
-    left: 45%; /* Adjust relative to the parent container */
+    position: absolute;
+    top: 15%;
+    left: 45%;
     transition: transform 0.3s ease;
     padding: 3vw;
     background-image: url("image.webp");
@@ -112,111 +210,16 @@ nav ul li a.current {
     overflow: hidden; 
 }
 
-.image_rectangle_portrait {
-    width: 40%; 
-    height: 40vw; 
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-    border-radius: 1vw; 
-    position: absolute; /* Absolute positioning */
-    top: -6%; 
-    left: 45%; 
-    transition: transform 0.3s ease;
-    padding: 3vw;
-    background-image: url("image.webp");
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
-    0 6px 6px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    overflow: hidden; /* Ensures content overflow is cropped */
-}
-
-.image {
-    width: 100%;
-    height: 100%;
-    object-position: center; /* Center the image */
-    border-radius: 1vw; /* Match the border radius of the container */
-    object-fit: fill;
-}
-
-.slider {
-    display: flex;
-    width: 100%; /* Total width for 2 images is 100% * 2 */
-    height: 100%;
-    animation: slide 5s ease-in-out infinite; /* 9 seconds per slide, infinite loop */
-}
-
-.slider img {
-    width: 100%; /* Each image occupies the full container */
-    height: 100%;
-    object-fit: fill; /* Maintain aspect ratio while filling the container */
-    margin-right: 8vw;
-    object-position: center;
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(5%); /* First image */
-    }
-    5% {
-        transform: translateX(-100%); /* Stay at the first image */
-    }
-    45% {
-        transform: translateX(-100%); /* Switch to the second image */
-    }
-    50% {
-        transform: translateX(5%); /* Switch to the second image */
-    }
-    100% {
-        transform: translateX(5%); /* Stay on the second image, return to the first */
-    }
-}
-
-.slider2 {
-    display: flex;
-    width: 100%; /* Total width for 2 images is 100% * 2 */
-    height: 100%;
-    animation: slide2 5s ease-in-out infinite; /* 9 seconds per slide, infinite loop */
-}
-
-.slider2 img {
-    width: 100%; /* Each image occupies the full container */
-    height: 100%;
-    object-fit: fill; /* Maintain aspect ratio while filling the container */
-    margin-right: 17vw;
-    object-position: center;
-}
-
-@keyframes slide2 {
-    0% {
-        transform: translateX(0%); /* First image */
-    }
-    5% {
-        transform: translateX(-120%); /* Stay at the first image */
-    }
-    45% {
-        transform: translateX(-120%); /* Switch to the second image */
-    }
-    50% {
-        transform: translateX(0%); /* Switch to the second image */
-    }
-    100% {
-        transform: translateX(0%); /* Stay on the second image, return to the first */
-    }
-}
-
-/* Main content styles */
 ul.shift {
     margin-left: 5%;
     margin-top: -3vh;
 }
 
-p {
-    max-width: 35%;
-    margin-right: 5%; /* Center vertically, control margin with viewport height */
-    font-size: 1.2vw;
-}
 
-ul {
+ul li{
     font-size: 1.2vw;
     list-style: none;
+    padding-bottom: 1%;
 }
 
 .ul {
@@ -228,9 +231,107 @@ ul {
 }
 
 footer {
-    color: white;
+    color: #6b4600;
 }
 
 .bolder {
     font-weight: bold;
+}
+
+@media only screen and (max-width:768px){
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 6vw;
+    }
+    h2 {
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 5vw;
+    }
+    nav{
+        background-color:rgb(107, 70, 0,0.2);
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul{
+        flex-direction: column;
+        display: flex;
+        gap: 2vw;
+        align-items: center;
+    }
+
+    nav ul li a{
+        font-family: Arial, Helvetica, sans-serif;
+        border-bottom: thin solid #000000;
+        font-size: 4vw;
+        text-align:center;
+        border-radius: 2vw;
+    }
+    nav ul li a.current {
+        background-color: #ffffff;
+        color: #6b4600;
+        border: 0.2vw solid #6b4600;
+        text-shadow: 0px 0px;
+    }
+    .rounded-rectangle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .rounded-rectangle ul li{
+        margin-left: 0; /* 去除左边距 */
+        margin-right: 0; /* 去除右边距 */
+        font-size: 4vw;
+    }
+    .rounded-rectangle p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        font-size: 4vw;
+    }
+    #HomeVideo{
+        position: static;
+        width: 90vw; 
+        height: 50vw;
+        margin-right: 6%;
+    }
+    .Pictures {
+        flex: 1 1 calc(50% - 20px);
+    }
+    .Pictures h2{
+        font-size: 5vw;
+    }
+    .container{
+        flex-wrap: wrap;
+    }
+    .space{
+        margin: 1%;
+    }
+}
+@media only screen and (max-width:480px){
+    nav ul li a{
+        font-family: Arial, Helvetica, sans-serif;
+        border-bottom: thin solid #000000;
+        font-size: 5vw;
+        text-align:center;
+        border-radius: 5vw;
+    }
+    .rounded-rectangle p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        font-size: 5vw;
+    }
+    .Pictures {
+        flex: 1 1 60%;
+    }
 }
