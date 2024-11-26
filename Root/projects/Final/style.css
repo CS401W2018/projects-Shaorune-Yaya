@@ -1,0 +1,236 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(34, 34, 34, 0.788);
+    background-color: #2222DD;
+    background-image: url(Blue_Background.webp);
+    background-size: cover;
+    filter: blur(0px);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background-blur {
+    width: 100%;
+    height: 100vh;
+    background-image: url(Blue_Background.webp);
+    background-size: cover;
+    filter: blur(20px);
+    position: relative;
+}
+.blur {
+    filter: blur(5px);
+}
+
+
+h1 {
+    color: white;
+    margin-left: 2%;
+    margin-top: -2.3vw;
+    margin-left: 3vw;
+    font-size: 1.5vw;
+}
+h2{
+    font-size: 2vw;
+}
+
+.logo {
+    width: 3vw;
+    height: auto;
+    margin-right: 20px;
+    display: block;
+}
+
+nav {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 1% 10%; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 3%; 
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    border: 0.2vw solid rgb(255, 255, 255, 0);
+    padding: 5px 10px;
+    color: rgb(248, 246, 238);
+    text-shadow: -1px -1px 0 #82c3c5, 1px -1px 0 #82c3c5, -1px 1px 0 #82c3c5, 1px 1px 0 #82c3c5;
+    background-color: transparent;
+    border-radius: 1vw;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 120%
+    
+    
+}
+
+
+nav ul li a:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+
+nav ul li a.current {
+    background-color: #3498db;
+    color: white;
+}
+
+
+.rounded-rectangle {
+    width: 75%;
+    height: 30vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0 3vw 3vw 0; /* Use relative units */
+    box-shadow: vw 4vw 6vw rgba(0, 0, 0, 1);
+    margin-right: 5%; /* Center the element using relative units */
+    transition: transform 0.3s ease;
+    padding: 3vw;
+    position: relative; /* Relative positioning */
+}
+
+.image_rectangle_Landscape {
+    width: 55%; 
+    height: 18vw; 
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 1vw; 
+    position: absolute; /* Absolute positioning, overlapping the rounded rectangle */
+    top: 7%; /* Adjust relative to the parent container */
+    left: 45%; /* Adjust relative to the parent container */
+    transition: transform 0.3s ease;
+    padding: 3vw;
+    background-image: url("image.webp");
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+    0 6px 6px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+}
+
+.image_rectangle_portrait {
+    width: 40%; 
+    height: 40vw; 
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 1vw; 
+    position: absolute; /* Absolute positioning */
+    top: -6%; 
+    left: 45%; 
+    transition: transform 0.3s ease;
+    padding: 3vw;
+    background-image: url("image.webp");
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+    0 6px 6px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    overflow: hidden; /* Ensures content overflow is cropped */
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-position: center; /* Center the image */
+    border-radius: 1vw; /* Match the border radius of the container */
+    object-fit: fill;
+}
+
+.slider {
+    display: flex;
+    width: 100%; /* Total width for 2 images is 100% * 2 */
+    height: 100%;
+    animation: slide 5s ease-in-out infinite; /* 9 seconds per slide, infinite loop */
+}
+
+.slider img {
+    width: 100%; /* Each image occupies the full container */
+    height: 100%;
+    object-fit: fill; /* Maintain aspect ratio while filling the container */
+    margin-right: 8vw;
+    object-position: center;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(5%); /* First image */
+    }
+    5% {
+        transform: translateX(-100%); /* Stay at the first image */
+    }
+    45% {
+        transform: translateX(-100%); /* Switch to the second image */
+    }
+    50% {
+        transform: translateX(5%); /* Switch to the second image */
+    }
+    100% {
+        transform: translateX(5%); /* Stay on the second image, return to the first */
+    }
+}
+
+.slider2 {
+    display: flex;
+    width: 100%; /* Total width for 2 images is 100% * 2 */
+    height: 100%;
+    animation: slide2 5s ease-in-out infinite; /* 9 seconds per slide, infinite loop */
+}
+
+.slider2 img {
+    width: 100%; /* Each image occupies the full container */
+    height: 100%;
+    object-fit: fill; /* Maintain aspect ratio while filling the container */
+    margin-right: 17vw;
+    object-position: center;
+}
+
+@keyframes slide2 {
+    0% {
+        transform: translateX(0%); /* First image */
+    }
+    5% {
+        transform: translateX(-120%); /* Stay at the first image */
+    }
+    45% {
+        transform: translateX(-120%); /* Switch to the second image */
+    }
+    50% {
+        transform: translateX(0%); /* Switch to the second image */
+    }
+    100% {
+        transform: translateX(0%); /* Stay on the second image, return to the first */
+    }
+}
+
+/* Main content styles */
+ul.shift {
+    margin-left: 5%;
+    margin-top: -3vh;
+}
+
+p {
+    max-width: 35%;
+    margin-right: 5%; /* Center vertically, control margin with viewport height */
+    font-size: 1.2vw;
+}
+
+ul {
+    font-size: 1.2vw;
+    list-style: none;
+}
+
+.ul {
+    background-image: url('bullet_point.webp'); /* Use image for bullet points */
+    background-size: 20px 20px; /* Set image size */
+    background-repeat: no-repeat;
+    background-position: 0 2px; /* Adjust image position */
+    padding-left: 30px; /* Reserve space for bullet points */
+}
+
+footer {
+    color: white;
+}
+
+.bolder {
+    font-weight: bold;
+}
