@@ -23,6 +23,11 @@ body {
     filter: blur(5px);
 }
 
+p {
+    color: #6b4600;
+    margin-left: -15%;
+    font-size: 20px;
+}
 
 h1 {
     color: #6b4600;
@@ -37,8 +42,8 @@ h2{
     
 }
 h3{
-    color: #6b460077;
-    font-size: 1.5vw;
+    color: #6b4600;
+    font-size: 2vw;
     margin-top: 0px;
     
 }
@@ -114,7 +119,7 @@ nav ul li a.current {
 .rounded-rectangle p{
     max-width: 90%;
     margin-right: 5%;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     line-height: 200%;
     margin-left: 3%;
 }
@@ -126,7 +131,6 @@ nav ul li a.current {
     font-size: 3vw; 
     font-weight: bold;
     color: #6b4600; 
-    float: left; 
     line-height: 50%;
 }
 .container{
@@ -142,6 +146,12 @@ nav ul li a.current {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    gap:5px
+}
+.container3{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap:5px
 }
 .Pictures{
@@ -191,6 +201,128 @@ nav ul li a.current {
     text-align: center;
 }
 
+.Pictures3{
+    flex: 0 0 calc(45% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    overflow: hidden;
+    padding: 0px;
+    margin: 1%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+.Pictures3 img{
+    width:100%;
+    height: auto;
+}
+
+.Pictures3 h2{
+    width:90%;
+    margin: auto;
+    height: auto;
+}
+
+.hover-box {
+    width: 40vw;
+    height: 20vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+.hover-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.hover-table th,
+.hover-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    position: relative;
+}
+
+.hover-table tr:hover {
+    background-color: #f2f2f2;
+}
+
+.popup-container {
+    position: relative;
+}
+.popup2 img {
+    max-width: 30vw;
+    border-radius: 5px;
+}
+
+.popup-container:hover .popup2 {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+.popup2{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 8px;
+}
+.popup {
+    position: fixed;
+    top: 30%;
+    left: 42%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 10;
+}
+.popup p{
+    font-size: 2vw;
+    display: block;
+}
+.popup h2{
+    font-size: 3vw;
+}
+.popup p::first-letter {
+    font-size: 3vw; 
+    font-weight: bold;
+    color: #6b4600; 
+    line-height: 120%;
+    margin: 0;
+    padding: 0;
+}
+.hover-box:hover .popup {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 figcaption {
     display: none;
 }
@@ -202,7 +334,6 @@ figcaption {
     position: absolute;
     top: 15%;
     left: 45%;
-    transition: transform 0.3s ease;
     padding: 3vw;
     background-image: url("image.webp");
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
@@ -223,11 +354,11 @@ ul li{
 }
 
 .ul {
-    background-image: url('bullet_point.webp'); /* Use image for bullet points */
-    background-size: 20px 20px; /* Set image size */
+    background-image: url('icons/bullet_point.webp'); 
+    background-size: 20px 20px; 
     background-repeat: no-repeat;
-    background-position: 0 2px; /* Adjust image position */
-    padding-left: 30px; /* Reserve space for bullet points */
+    background-position: 0 2px;
+    padding-left: 30px;
 }
 
 footer {
@@ -236,6 +367,39 @@ footer {
 
 .bolder {
     font-weight: bold;
+}
+
+.breeds{
+    margin: 2% 25%;
+    border:thick solid #6b4600;
+    border-spacing: 0px;
+    border-collapse:collapse;
+}
+
+.breeds td, .breeds th{
+    margin: 0px auto;
+    border:thin solid #6b4600;
+    padding:20px;
+}
+
+.breeds thead{
+    background-color: #6b4600;
+    color: white;
+}
+
+.breeds tbody tr:nth-child(even){
+    background-color: rgba(173, 96, 24, 0.2);
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+.breeds tbody tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0.5);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.breeds tfoot{
+    background-color: #6b4600;
+    color: white;
 }
 
 @media only screen and (max-width:768px){
@@ -286,8 +450,8 @@ footer {
         width: 100%;
     }
     .rounded-rectangle ul li{
-        margin-left: 0; /* 去除左边距 */
-        margin-right: 0; /* 去除右边距 */
+        margin-left: 0;
+        margin-right: 0;
         font-size: 4vw;
     }
     .rounded-rectangle p{
