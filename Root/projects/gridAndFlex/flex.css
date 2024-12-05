@@ -64,19 +64,21 @@ aside p{
 figcaption {
     display: none;
 }
-
-.clear{
-    clear:both;
+.links {
+    
 }
 .links{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap:20%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
     background-color: gray;
 }
 .links a{
     color:rgb(247, 247, 247);
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     padding: 0.2%;
+}
+figure{
+    margin: 0;
 }

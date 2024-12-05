@@ -401,6 +401,9 @@ footer {
     background-color: #6b4600;
     color: white;
 }
+#footer{
+    margin-left: 20%;
+}
 
 @media only screen and (max-width:768px){
     body {
