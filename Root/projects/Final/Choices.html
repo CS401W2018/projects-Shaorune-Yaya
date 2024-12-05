@@ -6,6 +6,7 @@
     <title>Cat World Guide</title>
     <link rel="stylesheet" href="style.css" media="screen">
 </head>
+<div id="popupBackground" class="hidden"></div>
 <body>
     <nav>
     <header>
@@ -21,8 +22,13 @@
             <li><a href="Training.html">Training</a></li>
         </ul>
     </nav>
-    
     <main>
+        <div id="errorModal" class="modal hidden">
+            <h2>Form Errors</h2>
+            <ul id="errorList">
+            </ul>
+            <button id="closeModal" class="close-button">&times;</button>
+        </div>
         <div class="rounded-rectangle">
             <h2>Choose a cat that suits you!</h2>
             <h3>#Find the most suitable cat for you, make it your loyal companion, and embark on a warm journey of companionship!</h3>
@@ -30,82 +36,121 @@
             <p>
                 Here, you can submit your living situation and personal preferences, such as personality, family members, and age, by filling out a simple form. Our system will recommend the most suitable cat type for your lifestyle based on this data. Whether you are looking for lively and active playmates or gentle and quiet companions, we can help you find your favorite cat.
             </p>
+            <button id="startButton">Start Choosing My Cat</button>
         
-            <div>
-                <div class="popup-content">
+            <div id="popupOverlay" class="hidden">
+                <div class="popupForm">
+                    <button class="close-button" id="closeButton">&times;</button>
                     <h2>Fill the Form</h2>
+                    Options with * are required  
                     <form id="catRecommendationForm">
-                        Options with * are required
                         <br class="space">
-                        <fieldset>
+                        <fieldset id="step1" class="form-step">
                             <legend>Basic information</legend>
-                            <label for="userName">* First Name ：</label>
-                            <input type="text" id="userName" name="userName" placeholder="Your First Name" required>
+                            <div class="form-row">
+                                <label for="firstNameInput">* First Name ：</label>
+                                <input type="text" name="firstName" id="firstNameInput" placeholder="Your First Name" required>
+                            </div>
                             <br><br>
-                            <label for="userName">* Last Name ：</label>
-                            <input type="text" id="userName" name="userName" placeholder="Your Last Name" required>
+                            <div class="form-row">
+                                <label for="lastNameInput">* Last Name ：</label>
+                                <input type="text" name="lastName" id="lastNameInput" placeholder="Your Last Name" required>
+                            </div>
                             <br><br>
-                            <label for="contact">* Email :：</label>
-                            <input type="text" id="contact" name="contact" placeholder="example@email.com" required>
+                            <div class="form-row">
+                                <label for="emailInput">* Email:</label>
+                                <input type="email" name="email" id="emailInput" placeholder="example@email.com" required>
+                            </div>
                             <br><br>
-                            <label for="contact">Other Contact (Optional):：</label>
-                            <input type="text" id="contact" name="contact" placeholder="example@email.com" required>
+                            <div class="form-row">
+                                <label for="contact">Other Contact：</label>
+                                <input type="phone" id="phone" name="phoneInput" placeholder="(XXX)-XXX-XXXX">
+                            </div>
+                            <br><br>
+                            <div class="form-row">
+                                <button type="button" class="next-step">Next</button>
+                            </div>
                         </fieldset>
                         <br>
-                        <fieldset>
+                        <fieldset id="step2" class="form-step hidden">
                             <legend>Living environment</legend>
-                            * Do you have any children?：
-                            <label><input type="radio" name="hasChildren" value="yes" required> Yes</label>
-                            <label><input type="radio" name="hasChildren" value="no" required> No</label>
+                            <div class="form-row">
+                                * Do you have any children?：
+                                <label><input type="radio" name="hasChildren" value="yes" required> Yes</label>
+                                <label><input type="radio" name="hasChildren" value="no" required> No</label>
+                            </div>
                             <br><br>
-                            * Do you have any other pet：
-                            <label><input type="radio" name="hasPet" value="yes" required> Yes</label>
-                            <label><input type="radio" name="hasPet" value="no" required> No</label>
+                            <div class="form-row">
+                                * Do you have any other pet：
+                                <label><input type="radio" name="hasPet" value="yes" required> Yes</label>
+                                <label><input type="radio" name="hasPet" value="no" required> No</label>
+                            </div>
                             <br><br>
-                            <label for="livingEnvironment">Living Environment:</label>
-                            <select name="livingEnvironment" id="livingEnvironment">
-                                <option value="apartment">Apartment</option>
-                                <option value="house">House</option>
-                                <option value="yard">House with Yard</option>
-                            </select>
+                            <div class="form-row">
+                                <label for="livingEnvironment">Living Environment:</label>
+                                <select name="livingEnvironment" id="livingEnvironment">
+                                    <option value="apartment">Apartment</option>
+                                    <option value="house">House</option>
+                                    <option value="yard">House with Yard</option>
+                                </select>
+                            </div>
+                            <br><br>
+                            <div class="form-row">
+                                <button type="button" class="previous-step">Back</button>
+                                <button type="button" class="next-step">Next</button>
+                            </div>
                         </fieldset>
                         <br>
-                        <fieldset>
+                        <fieldset id="step3" class="form-step hidden">
                             <legend>Preferred personality</legend>
-                            * Favorite Cat Personality (Multiple Choice):
-                            <br>
-                            <label><input type="checkbox" name="catPersonality" value="active"> Active</label>
-                            <label><input type="checkbox" name="catPersonality" value="quiet"> Quiet</label>
-                            <label><input type="checkbox" name="catPersonality" value="affectionate"> Affectionate</label>
-                            <label><input type="checkbox" name="catPersonality" value="curious"> Curious</label>
-                            <label><input type="checkbox" name="catPersonality" value="independent"> Independent</label>
+                            <div class="form-row">
+                                * Favorite Cat Personality (Multiple Choice):
+                                <br>
+                                <label><input type="checkbox" name="catPersonality" value="active"> Active</label>
+                                <label><input type="checkbox" name="catPersonality" value="quiet"> Quiet</label>
+                                <label><input type="checkbox" name="catPersonality" value="affectionate"> Affectionate</label>
+                                <label><input type="checkbox" name="catPersonality" value="curious"> Curious</label>
+                                <label><input type="checkbox" name="catPersonality" value="independent"> Independent</label>
+                            </div>
                             <br><br>
-                            Do you want cats to enjoy interaction?:
-                            <label><input type="radio" name="likesInteraction" value="yes"> Yes</label>
-                            <label><input type="radio" name="likesInteraction" value="no"> No</label>
+                            <div class="form-row">
+                                Do you want cats to enjoy interaction?:
+                                <label><input type="radio" name="likesInteraction" value="yes"> Yes</label>
+                                <label><input type="radio" name="likesInteraction" value="no"> No</label>
+                            </div>
+                            <br><br>
+                            <div class="form-row">
+                                <button type="button" class="previous-step">Back</button>
+                                <button type="button" class="next-step">Next</button>
+                            </div>
                         </fieldset>
                         <br>
-                        <fieldset>
-                            <legend>Time schedule</legend>
-                            <label for="dailyCompanionTime">The average amount of time a cat can spend with them every day:</label>
-                            <input type="text" id="dailyCompanionTime" name="dailyCompanionTime" placeholder="Hours">
-                        </fieldset>
-                        <br>
-                        <fieldset>
-                            <legend>Other informations</legend>
-                            Do you accept the unique habits or special needs of cats?:
-                            <label><input type="radio" name="acceptsSpecialNeeds" value="yes"> Yes</label>
-                            <label><input type="radio" name="acceptsSpecialNeeds" value="no"> No</label>
+                        <fieldset id="step4" class="form-step hidden">
+                            <legend>Time schedule and Others</legend>
+                            <div class="form-row">
+                                The average amount of time a cat can spend with them every day:
+                                <label for="dailyCompanionTime"></label>
+                                <input type="text" id="dailyCompanionTime" name="dailyCompanionTime" placeholder="Hours">
+                            </div>
                             <br><br>
+                            <div class="form-row">
+                                Do you accept the unique habits or special needs of cats?:
+                                <label><input type="radio" name="acceptsSpecialNeeds" value="yes"> Yes</label>
+                                <label><input type="radio" name="acceptsSpecialNeeds" value="no"> No</label>
+                            </div>
+                            <br><br>
+                            <div class="form-row">
                             * Acceptable age range for cats:
-                            <label><input type="radio" name="catAgeRange" value="kitten"> Kitten</label>
-                            <label><input type="radio" name="catAgeRange" value="adult"> Adult</label>
-                            <label><input type="radio" name="catAgeRange" value="senior"> Senior</label>
+                                <label><input type="radio" name="catAgeRange" value="kitten"> Kitten</label>
+                                <label><input type="radio" name="catAgeRange" value="adult"> Adult</label>
+                                <label><input type="radio" name="catAgeRange" value="senior"> Senior</label>
+                            </div>
+                            <br><br>
+                            <div class="form-row">
+                                <button type="button" class="previous-step">Back</button>
+                                <input type="submit">
+                            </div>
                         </fieldset>
-            
-                        <br>
-            
-                        <button type="submit">Recommend my cat</button>
                     </form>
                 </div>
             </div>
@@ -118,5 +163,6 @@
             <br></p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
