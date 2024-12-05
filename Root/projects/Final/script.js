@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.body.innerHTML = `<h2>${response.message}</h2>`;
                 form.reset();
             } else {
-                alert("There was an error submitting the form. Please try again.");
+                errors.push("There was an error submitting the form. Please try again.");
             }
         };
         xhr.send(JSON.stringify(formData));
