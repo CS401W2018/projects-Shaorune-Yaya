@@ -124,25 +124,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "./submit.json", true);
+        xhr.open("GET", "submit.json", true);
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.onload = function () {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
-                alert(response.message);
-                popupOverlay.classList.add("hidden");
-                popupBackground.classList.add("hidden");
+                document.body.innerHTML = `<h2>${response.message}</h2>`;
                 form.reset();
-                currentStep = 0;
-                showStep(currentStep);
             } else {
                 alert("There was an error submitting the form. Please try again.");
             }
         };
-        xhr.send(JSON.stringify(data));
+        xhr.send(JSON.stringify(formData));
+        console.log(formData);
     });
-    
-    popupOverlay.classList.add("hidden");
-    popupBackground.classList.add("hidden");
-    showStep(currentStep);
 });

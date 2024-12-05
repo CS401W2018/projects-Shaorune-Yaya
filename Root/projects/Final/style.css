@@ -3,7 +3,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: rgba(34, 34, 34, 0.788);
     background-color: #f2eadf;
-    background-image: url(Blue_Background.webp);
     background-size: cover;
     filter: blur(0px);
     margin: 0;
@@ -580,6 +579,11 @@ body.blur {
         text-align: center;
         font-size: 5vw;
     }
+    h3{
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 5vw;
+    }
     nav{
         background-color:rgb(107, 70, 0,0.2);
         flex-direction: column;
@@ -590,6 +594,11 @@ body.blur {
         display: flex;
         gap: 2vw;
         align-items: center;
+    }
+    .ul {
+        background-repeat: no-repeat;
+        background-position: 0 2px;
+        padding-left: 30px;
     }
 
     nav ul li a{
@@ -629,6 +638,16 @@ body.blur {
         height: 50vw;
         margin-right: 6%;
     }
+    .Pictures2 h2{
+        margin: 0px;
+        max-width: 80%;
+        font-size: 6vw;
+        text-align: center;
+    }
+    .Pictures2 img{
+        margin: 0px;
+        max-width: 100%;
+    }
     .Pictures {
         flex: 1 1 calc(50% - 20px);
     }
@@ -636,6 +655,13 @@ body.blur {
         font-size: 5vw;
     }
     .container{
+        flex-wrap: wrap;
+    }
+    .container2{
+        flex-wrap: wrap;
+    }
+    .container3{
+        flex-direction: column;
         flex-wrap: wrap;
     }
     .space{
