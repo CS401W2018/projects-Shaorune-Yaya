@@ -1,33 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const startButton = document.getElementById("startButton"); // 开始按钮
-    const popupOverlay = document.getElementById("popupOverlay"); // 弹窗遮罩层
-    const popupBackground = document.getElementById("popupBackground"); // 灰色背景
-    const closeButton = document.getElementById("closeButton"); // 关闭按钮
-    const steps = document.querySelectorAll(".form-step"); // 所有 fieldset 步骤
-    const nextButtons = document.querySelectorAll(".next-step"); // "Next" 按钮
-    const backButtons = document.querySelectorAll(".previous-step"); // "Back" 按钮
-    const form = document.getElementById("myForm"); // 表单
-    const errorModal = document.getElementById("errorModal"); // 错误模态框
-    const errorList = document.getElementById("errorList"); // 错误列表
-    const closeModal = document.getElementById("closeModal"); // 错误模态框关闭按钮
+    const startButton = document.getElementById("startButton"); 
+    const popupOverlay = document.getElementById("popupOverlay"); 
+    const popupBackground = document.getElementById("popupBackground");
+    const closeButton = document.getElementById("closeButton");
+    const steps = document.querySelectorAll(".form-step"); 
+    const nextButtons = document.querySelectorAll(".next-step");
+    const backButtons = document.querySelectorAll(".previous-step"); 
+    const form = document.getElementById("myForm");
+    const errorModal = document.getElementById("errorModal");
+    const errorList = document.getElementById("errorList"); 
+    const closeModal = document.getElementById("closeModal");
 
-    let currentStep = 0; // 当前步骤索引
+    let currentStep = 0;
 
-    // 显示指定步骤
+
     function showStep(stepIndex) {
         steps.forEach((step, index) => {
             if (index === stepIndex) {
-                step.classList.remove("hidden"); // 显示当前步骤
+                step.classList.remove("hidden"); 
             } else {
-                step.classList.add("hidden"); // 隐藏其他步骤
+                step.classList.add("hidden"); 
             }
         });
     }
 
-    // 验证当前步骤
+
     function validateCurrentStep(stepIndex) {
         const step = steps[stepIndex];
-        const inputs = step.querySelectorAll("input, select"); // 获取当前步骤的所有输入字段
+        const inputs = step.querySelectorAll("input, select"); 
         let errors = [];
 
         inputs.forEach((input) => {
@@ -40,8 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if (errors.length > 0) {
-            // 显示错误模态框
-            errorList.innerHTML = ""; // 清空之前的错误
+            errorList.innerHTML = "";
             errors.forEach((error) => {
                 const li = document.createElement("li");
                 li.textContent = error;
@@ -54,58 +53,51 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     }
 
-    // 打开表单弹窗
     startButton.addEventListener("click", () => {
         popupOverlay.classList.remove("hidden");
         popupBackground.classList.remove("hidden");
-        showStep(currentStep); // 初始化显示第一步
+        showStep(currentStep); 
     });
 
-    // 关闭表单弹窗
     closeButton.addEventListener("click", () => {
         popupOverlay.classList.add("hidden");
         popupBackground.classList.add("hidden");
-        currentStep = 0; // 重置为第一步
-        showStep(currentStep); // 确保关闭后重新显示第一步
-        form.reset(); // 重置表单
+        currentStep = 0;
+        showStep(currentStep); 
+        form.reset();
     });
 
-    // 关闭错误模态框
     closeModal.addEventListener("click", () => {
-        errorModal.classList.add("hidden"); // 隐藏错误模态框
+        errorModal.classList.add("hidden"); 
     });
 
-    // 下一步按钮逻辑
     nextButtons.forEach((button) => {
         button.addEventListener("click", () => {
             if (validateCurrentStep(currentStep)) {
                 if (currentStep < steps.length - 1) {
-                    currentStep++; // 前进到下一步
+                    currentStep++; 
                     showStep(currentStep);
                 }
             }
         });
     });
 
-    // 返回按钮逻辑
     backButtons.forEach((button) => {
         button.addEventListener("click", () => {
             if (currentStep > 0) {
-                currentStep--; // 返回到上一步
+                currentStep--; 
                 showStep(currentStep);
             }
         });
     });
 
-    // 提交表单并验证
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // 阻止默认提交行为
 
-        // 手动提取字段值
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
-        // 验证所有字段
         let errors = [];
 
         if (!data.firstName) {
@@ -121,8 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (errors.length > 0) {
-            // 显示错误模态框
-            errorList.innerHTML = ""; // 清空之前的错误
+            errorList.innerHTML = ""; 
             errors.forEach((error) => {
                 const li = document.createElement("li");
                 li.textContent = error;
@@ -132,9 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // 模拟提交表单
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "submit.json", true);
+        xhr.open("GET", "./submit.json", true);
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.onload = function () {
             if (xhr.status === 200) {
@@ -151,8 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         xhr.send(JSON.stringify(data));
     });
-
-    // 初始化，隐藏弹窗，默认显示第一步
+    
     popupOverlay.classList.add("hidden");
     popupBackground.classList.add("hidden");
     showStep(currentStep);
